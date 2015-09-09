@@ -7,7 +7,7 @@
  Version: 1.4
  Author URI: http://rescuethemes.com
 */
-echo "test";
+
 /*---------------------------------------------------------*/
 /* Configuration & Necessary Files
 /*---------------------------------------------------------*/
