@@ -77,8 +77,7 @@
              ?>
 
             <li data-id="id-<?php echo $count; ?>" class="mix <?php foreach ($terms as $term) { echo strtolower(preg_replace('/\s+/', '-', $term->slug)). ' '; } ?>">
-
-            <?php if ($theme_name == 'Advocator') { // - v1.2 ?>
+            <?php if ($theme_name == 'Advocator' || $theme_name == 'Advocator Child' || $theme_name == 'Advocator Lite' || $theme_name == 'Advocator Lite Child') { // - v1.2 ?>
                 
                   <?php 
                     // Check if wordpress supports featured images, and if so output the thumbnail
@@ -97,7 +96,7 @@
                   <?php // Output the title of each portfolio item ?>
                   <p><a href="<?php the_permalink(); ?>"><?php echo get_the_title(); ?></a></p>
   
-          <?php } elseif ($theme_name == 'Legislator') { // - v1.2 ?>
+          <?php } elseif ($theme_name == 'Legislator' || $theme_name == 'Legislator Child') { // - v1.2 ?>
                 
                   <div class="view view-first">
                   
