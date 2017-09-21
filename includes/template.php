@@ -1,6 +1,7 @@
 <div class="rescue_portfolio">
 
-<div class="filter_wrap">
+<?php if ( !$atts['filter'] ) { ?>
+	<div class="filter_wrap">
 
         <ul class="clearfix">
 
@@ -52,19 +53,30 @@
               echo $term_list;
             }
 
-            $theme_name = wp_get_theme(); // - v1.2
-
           ?>
         </ul><!-- .filter -->
-    </div><!-- .filter_wrap -->
-
+    </div><!-- .filter_wrap -->		
+<?php } ?>
+	   
         <ul id="Grid" class="">
       
           <?php
-            
+             $theme_name = wp_get_theme(); // - v1.2
+             
             // Query Our Database
-            $wpbp = new WP_Query(array( 'post_type' => 'portfolio', 'posts_per_page' =>'-1' ) ); 
+            $args = array_merge(array(
+            					'post_type' => 'portfolio',  
+								'tax_query' => array(
+										array(
+												'taxonomy' => 'filter',
+												'field'    => 'slug',
+												'terms'    => $atts['filter'],
+										),
+								),
+							), 
+					$atts );
 
+			$wpbp = new WP_Query( $args );
             // Begin The Loop
             if ($wpbp->have_posts()) : while ($wpbp->have_posts()) : $wpbp->the_post(); 
 
