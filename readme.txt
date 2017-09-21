@@ -4,8 +4,8 @@ Contributors: rescuethemes
 Donate link: http://rescuethemes.com
 Tags: plugin, widget, sidebar, portfolio, gallery, images, custom-post
 Requires at least: 3.0
-Tested up to: 4.3
-Stable tag: 1.4
+Tested up to: 4.8.1
+Stable tag: 1.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -31,6 +31,19 @@ When activated, this plugin adds a custom post type called 'Portfolio' to your W
 
 Yep, you should use the [rescue_portfolio] shortcode in a full width page.
 
+= What are all of the shortcode attributes? =
+
+The shortcode can be adjusted to display the following:
+
+* posts_per_page - Enter the number of images to display. To display all of the images, enter -1 (negative one).
+* orderby - Enter any of the WP_Query orderby strings. A complete list can be viewed at [Order & Orderby Parameters](http://codex.wordpress.org/Class_Reference/WP_Query#Order_.26_Orderby_Parameters).
+* order - 'ASC' - ascending order from lowest to highest values (1, 2, 3; a, b, c).
+	'DESC' - descending order from highest to lowest values (3, 2, 1; c, b, a).
+* filter - Enter the name of the filter to display. Leave blank to show all filters with live sorting.
+
+`[rescue_portfolio posts_per_page='5' orderby='title' order='ASC' filter='events']`
+
+
 = Where can I check out other themes and plugins by Rescue Themes? =
 
 I'm glad you asked! Here's our current portfolio of themes:
@@ -38,6 +51,8 @@ I'm glad you asked! Here's our current portfolio of themes:
 http://rescuethemes.com/themes-plugins
 
 === Changelog ===
+= 1.5 =
+* Added shortcode options
 
 = 1.4 =
 * Corrected images displaying for 3rd party themes
