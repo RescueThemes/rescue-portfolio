@@ -4,8 +4,8 @@ Contributors: rescuethemes
 Donate link: http://rescuethemes.com
 Tags: plugin, widget, sidebar, portfolio, gallery, images, custom-post
 Requires at least: 3.0
-Tested up to: 4.8.1
-Stable tag: 1.5
+Tested up to: 4.9
+Stable tag: 1.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -51,6 +51,10 @@ I'm glad you asked! Here's our current portfolio of themes:
 http://rescuethemes.com/themes-plugins
 
 === Changelog ===
+
+= 1.6 =
+* Support for php 7.1+
+
 = 1.5 =
 * Added shortcode options
 

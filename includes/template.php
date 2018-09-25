@@ -17,6 +17,8 @@
               'order'         => 'ASC',
             ));
             
+            
+            
             // set a count to the amount of categories in our taxonomy
             $count = count($terms); 
             
@@ -26,11 +28,14 @@
             // test if the count has any categories
             if ($count > 0) {
             
-            // If we don't define this variable here, WP_DEBUG will give an 'Undefined variable' notice
-            $term_list = '';
+            	$terms_array = array();
+            	// If we don't define this variable here, WP_DEBUG will give an 'Undefined variable' notice
+            	$term_list = '';
               
               // break each of the categories into individual elements
               foreach ($terms as $term) {
+                
+                $terms_array[] = $term->name; 
                 
                 // increase the count by 1
                 $i++;
@@ -51,8 +56,10 @@
               
               // print out each of the categories in our new format
               echo $term_list;
+              
+              $atts['filter'] = $terms_array; 
             }
-
+			
           ?>
         </ul><!-- .filter -->
     </div><!-- .filter_wrap -->		
@@ -61,7 +68,7 @@
         <ul id="Grid" class="">
       
           <?php
-             $theme_name = wp_get_theme(); // - v1.2
+             $theme_name = wp_get_theme()->name;
              
             // Query Our Database
             $args = array_merge(array(
@@ -90,7 +97,7 @@
 
             <li data-id="id-<?php echo $count; ?>" class="mix <?php foreach ($terms as $term) { echo strtolower(preg_replace('/\s+/', '-', $term->slug)). ' '; } ?>">
             <?php if ($theme_name == 'Advocator' || $theme_name == 'Advocator Child' || $theme_name == 'Advocator Lite' || $theme_name == 'Advocator Lite Child') { // - v1.2 ?>
-                
+               
                   <?php 
                     // Check if wordpress supports featured images, and if so output the thumbnail
                     if ( (function_exists('has_post_thumbnail')) && (has_post_thumbnail()) ) : 

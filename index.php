@@ -4,7 +4,7 @@
  Plugin URI: https://github.com/RescueThemes/rescue-portfolio
  Description: Adds a portfolio custom post type and portfolio shortcode for themes developed by <a href="http://rescuethemes.com">Rescue Themes</a>
  Author: Rescue Themes
- Version: 1.5
+ Version: 1.6
  Author URI: http://rescuethemes.com
 */
 
